@@ -1,1 +1,1 @@
-# this is for study porposes as a first year bsit
+# this is for study purposes as a first year bsit
