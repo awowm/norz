@@ -1,0 +1,186 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Sign up page for our application. Create an account to get started.">
+    <meta name="author" content="tristan">
+    
+    <title>Sign Up</title>
+</head>
+<body>
+
+  <div class="loader-wrapper">
+    <div class="loader"></div>
+  </div>
+
+    
+   
+    <form action="login.html" method="post">
+      <h1>SIGN IN</h1>
+        <label for="lname">Lastname:</label>
+        <input type="text" id="text" name="lname"  placeholder="Lastname" required>
+        <br>
+        <label for="fname">Firstname:</label>
+        <input type="text" id="fname" name="fname" placeholder="Firstname" required>    
+        <br>
+        <label for="mname">Middlename:</label>
+        <input type="text" id="mname" name="mname" placeholder="Middlename" required>
+        <br>    
+        <label for="date">birthdate:</label>
+        <input type="date" id="date" name="date">
+        <br>
+        <input type="radio" name="gender" value="male" checked> Male<br>
+        <input type="radio" name="gender" value="female"> Female<br>
+        <input type="radio" name="gender" value="female"> Never mind your gay as fuck<br>
+        <br>
+        <label for="psw">Password:</label>
+        <input type="password" id="psw" name="psw" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters" required>
+        <br>
+        <label for="cpassword"> Retype Password:</label>
+       <input type="password" id="cpassword" name="cpassword" required>
+        <br>
+        <input type="submit" value="Sign Up">
+
+    </form>
+
+<script>
+    window.addEventListener("load", function () {
+      setTimeout(() => {
+        document.querySelector(".loader-wrapper").style.opacity = "0";
+        setTimeout(() => {
+          document.querySelector(".loader-wrapper").style.display = "none";
+        }, 500);
+      }, 1500);
+    });
+  </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>
+
+<style>
+
+body {
+    background-color: #9ECAD6;
+    color: black;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    margin: 50px;
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    
+}
+
+/* form design */
+form {
+    background-color: #F5CBCB;
+    margin: auto;
+    padding: 15px;
+    border-radius: 4%;
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.1);
+}
+
+h1{ 
+ padding: 60px;
+ margin-left: 40px;
+
+}
+
+input[type=submit] {
+  width: 100%;
+  background-color: #4CAF50;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+input[type=text], select {
+  width: 100%;
+  padding: 10px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+input[type=password], select {
+  width: 100%;
+  padding: 10px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+label{
+    font-weight: bold;
+    margin-top: 12px;
+    display: inline-block;
+}
+
+
+ .loader-wrapper {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color:lightpink;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+    transition: opacity 0.5s ease-in-out;
+}
+
+/* Loader Animation */
+.loader {
+    width: 50px;
+    aspect-ratio: 1;
+    color: #dc1818;
+    background:
+        radial-gradient(circle at 60% 65%, currentColor 62%, #0000 65%) top left,
+        radial-gradient(circle at 40% 65%, currentColor 62%, #0000 65%) top right,
+        linear-gradient(to bottom left, currentColor 42%, #0000 43%) bottom left,
+        linear-gradient(to bottom right, currentColor 42%, #0000 43%) bottom right;
+    background-size: 50% 50%;
+    background-repeat: no-repeat;
+    position: relative;
+    will-change: transform, opacity;
+}
+
+.loader:after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: inherit;
+    opacity: 0.4;
+    animation: l3 1s infinite ease-in-out;
+}
+
+@keyframes l3 {
+    to {
+        transform: scale(1.8);
+        opacity: 0;
+    }
+}
+
+
+</style>
